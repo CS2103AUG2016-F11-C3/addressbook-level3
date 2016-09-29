@@ -21,7 +21,7 @@ public class FavoriteCommand extends Command{
 
 	private Person getPersonWithExactName(String searchName) {
 		for (ReadOnlyPerson readOnlyPerson : addressBook.getAllPersons()) {
-			if (readOnlyPerson.getName().equals(searchName)) {
+			if (readOnlyPerson.getName().toString().equals(searchName)) {
 				Person person = new Person(readOnlyPerson);
 				return person;
 			}
