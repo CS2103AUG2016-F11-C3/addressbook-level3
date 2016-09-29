@@ -20,9 +20,8 @@ public class FavoriteCommand extends Command{
 	}
 
 	private Person getPersonWithExactName(String searchName) {
-		for (ReadOnlyPerson readOnlyPerson : addressBook.getAllPersons()) {
-			if (readOnlyPerson.getName().toString().equals(searchName)) {
-				Person person = new Person(readOnlyPerson);
+		for (Person person : addressBook.getAllPersons()) {
+			if (person.getName().toString().equals(searchName)) {
 				return person;
 			}
 		}
