@@ -40,6 +40,7 @@ public class Person implements ReadOnlyPerson {
     	this.isFavorite = favorite;
     }
 
+    @Override
     public boolean getIsFavorite() {
     	return isFavorite;
     }

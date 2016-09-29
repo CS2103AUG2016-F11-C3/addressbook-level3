@@ -13,6 +13,7 @@ public interface ReadOnlyPerson {
     Phone getPhone();
     Email getEmail();
     Address getAddress();
+    boolean getIsFavorite();
 
     /**
      * The returned TagList is a deep copy of the internal TagList,
