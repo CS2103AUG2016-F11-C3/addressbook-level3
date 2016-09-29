@@ -102,7 +102,7 @@ public class Parser {
      * @return
      */
     private Command prepareAddFavorite(String args) {
-    	return null;
+    	return new FavoriteCommand(args.trim());
     }
 
     /**
