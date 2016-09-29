@@ -17,7 +17,7 @@ public class FavoriteCommand extends Command{
 
 	public static final String MESSAGE_SUCCESS = "New person added to favorites: %1$s";
 	public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in favorites";
-	public static final String NOT_FOUND = "Person not found in address book";
+	public static final String MESSAGE_PERSON_NOT_FOUND = "Person not found in address book";
 	
 	private String searchName;
 	
@@ -37,7 +37,15 @@ public class FavoriteCommand extends Command{
 
 	@Override
 	public CommandResult execute() {
-		final ReadOnlyPerson PersonToAdd = getPersonWithExactName(searchName);
-		return null;
+		final Person personToFavorite = getPersonWithExactName(searchName);
+		if (personToFavorite == null) {
+			return new CommandResult(MESSAGE_PERSON_NOT_FOUND);
+		} else {
+			if (personToFavorite.getIsFavorite() == true) {
+				return new CommandResult(MESSAGE_DUPLICATE_PERSON);
+			}
+			personToFavorite.setIsFavorite(true);
+			return new CommandResult(String.format(MESSAGE_SUCCESS, personToFavorite));
+		}
 	}
 }
