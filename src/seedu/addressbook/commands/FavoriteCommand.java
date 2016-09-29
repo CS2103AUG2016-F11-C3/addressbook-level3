@@ -1,7 +1,6 @@
 package seedu.addressbook.commands;
 
 import seedu.addressbook.data.person.Person;
-import seedu.addressbook.data.person.ReadOnlyPerson;
 
 public class FavoriteCommand extends Command{
 	public static final String COMMAND_WORD = "fav";
