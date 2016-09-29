@@ -19,7 +19,9 @@ public class HelpCommand extends Command {
             + "\n" + ViewCommand.MESSAGE_USAGE
             + "\n" + ViewAllCommand.MESSAGE_USAGE
             + "\n" + HelpCommand.MESSAGE_USAGE
-            + "\n" + ExitCommand.MESSAGE_USAGE;
+            + "\n" + ExitCommand.MESSAGE_USAGE
+            + "\n" + FavoriteCommand.MESSAGE_USAGE
+            + "\n" + ShowFavoriteCommand.MESSAGE_USAGE;
 
     public HelpCommand() {}
 
