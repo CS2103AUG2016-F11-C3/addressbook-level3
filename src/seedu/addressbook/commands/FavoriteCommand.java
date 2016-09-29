@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import seedu.addressbook.data.person.Person;
 import seedu.addressbook.data.person.ReadOnlyPerson;
 
 public class FavoriteCommand extends Command{
@@ -24,9 +25,10 @@ public class FavoriteCommand extends Command{
 		this.searchName = name;
 	}
 
-	private ReadOnlyPerson getPersonWithExactName(String searchName) {
-		for (ReadOnlyPerson person : addressBook.getAllPersons()) {
-			if (person.getName().equals(searchName)) {
+	private Person getPersonWithExactName(String searchName) {
+		for (ReadOnlyPerson readOnlyPerson : addressBook.getAllPersons()) {
+			if (readOnlyPerson.getName().equals(searchName)) {
+				Person person = new Person(readOnlyPerson);
 				return person;
 			}
 		}
