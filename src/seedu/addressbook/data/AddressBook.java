@@ -132,7 +132,8 @@ public class AddressBook {
     }
 
     /**
-     * Defensively copied UniquePersonList of all persons in the address book at the time of the call.
+     * Defensively copied an alphabetically sorted UniquePersonList of all persons
+     * in the address book at the time of the call.
      */
     public UniquePersonList getAllPersons() {
         return new UniquePersonList(allPersons);
@@ -157,5 +158,10 @@ public class AddressBook {
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
         return Objects.hash(allPersons, allTags);
+    }
+
+    public void editPerson(Person target) {
+        // TODO Auto-generated method stub
+        
     }
 }
