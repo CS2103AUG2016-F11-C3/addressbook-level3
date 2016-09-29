@@ -21,16 +21,15 @@ public class ShowFavoriteCommand extends Command {
 
     @Override
     public CommandResult execute() {
-        List<ReadOnlyPerson> allFavoriteContacts = getPersonsInFavorite();
+        List<Person> allFavoriteContacts = getPersonsInFavorite();
         return new CommandResult(getMessageForPersonListShownSummary(allFavoriteContacts), allFavoriteContacts);
     }
     
-    private List<ReadOnlyPerson> getPersonsInFavorite() {
-        final List<ReadOnlyPerson> matchedPersons = new ArrayList<>();
-        for (ReadOnlyPerson roPerson : addressBook.getAllPersons()) {
-        	Person person = new Person(roPerson);
+    private List<Person> getPersonsInFavorite() {
+        final List<Person> matchedPersons = new ArrayList<>();
+        for (Person person : addressBook.getAllPersons()) {
             if (person.getIsFavorite() == true) {
-            	matchedPersons.add(roPerson);
+            	matchedPersons.add(person);
             }
         }
         return matchedPersons;
