@@ -47,7 +47,8 @@ public class UniquePersonList implements Iterable<Person> {
     }
 
     /**
-     * Constructs a list from the items in the given collection.
+     * Constructs a list in alphabetical order (non-case-sensitive) from
+     * the items in the given collection.
      * @param persons a collection of persons
      * @throws DuplicatePersonException if the {@code persons} contains duplicate persons
      */
@@ -56,6 +57,7 @@ public class UniquePersonList implements Iterable<Person> {
             throw new DuplicatePersonException();
         }
         internalList.addAll(persons);
+        java.util.Collections.sort(internalList);
     }
 
     /**
@@ -129,6 +131,11 @@ public class UniquePersonList implements Iterable<Person> {
     @Override
     public int hashCode() {
         return internalList.hashCode();
+    }
+
+    public UniquePersonList alphabeticalOrder() {
+        java.util.Collections.sort(internalList);
+        return null;
     }
 
 }
