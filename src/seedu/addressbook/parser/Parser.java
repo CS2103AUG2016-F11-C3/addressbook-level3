@@ -84,9 +84,25 @@ public class Parser {
                 return new ExitCommand();
 
             case HelpCommand.COMMAND_WORD: // Fallthrough
+            	
+            case FavoriteCommand.COMMAND_WORD:
+            	return prepareAddFavorite(arguments);
+            	
+            case ShowFavoriteCommand.COMMAND_WORD:
+            	return new ShowFavoriteCommand();
+            	
             default:
                 return new HelpCommand();
         }
+    }
+    
+    /**
+     * 
+     * @param args
+     * @return
+     */
+    private Command prepareAddFavorite(String args) {
+    	return new FavoriteCommand(args.trim());
     }
 
     /**
